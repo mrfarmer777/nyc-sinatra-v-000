@@ -13,13 +13,13 @@ class FiguresController < ApplicationController
   post '/figures' do
 
     @figure=Figure.create(params[:figure])
-    if !params["title"]["name"]==nil
+    if !params["title"]["name"]==[]
       binding.pry
       @title=Title.find_or_create_by(params["title"])
       @figure.titles<<@title
       @title.save
     end
-    if !params['landmark']["name"]==nil
+    if !params['landmark']["name"]==[]
       @landmark=Landmark.find_or_create_by(params["landmark"])
       @figure.landmarks<<@landmark
       @landmark.save
