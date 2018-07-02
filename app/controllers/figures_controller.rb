@@ -12,11 +12,11 @@ class FiguresController < ApplicationController
   post '/figures' do
     @figure=Figure.create(params[:figure])
     if !params["title"]["name"]==nil
-      @title=Title.create(name:params["title"]["name"])
+      @title=Title.find_or_create_by(name:params["title"]["name"])
       @figure.titles<<@title
     end
     if !params['landmark']["name"]==nil
-      @landmark=Landmark.create(name:params["landmark"]["name"])
+      @landmark=Landmark.find_or_create_by(name:params["landmark"]["name"])
       @figure.landmarks<<@landmark
     end
     @figure.save
