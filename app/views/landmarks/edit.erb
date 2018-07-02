@@ -5,7 +5,7 @@
   <input type="text" name="landmark[name]" id="landmark_name" value = "<%=@landmark.name%>"/>
   <br />
   <label for="landmark[name]">Year Completed: </label>
-  <input type="number" name="landmark[year_completed]" id="landmark_year_completed" <%=@landmark.year_completed%>/>
+  <input type="number" name="landmark[year_completed]" id="landmark_year_completed" value=<%=@landmark.year_completed%>/>
   <br />
   <label for="landmark[figure_id]">Figure Recognized: </label>
   <%Figure.all.each do |figure|%>
