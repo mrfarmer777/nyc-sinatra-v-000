@@ -16,12 +16,10 @@ class FiguresController < ApplicationController
       binding.pry
       @title=Title.find_or_create_by(params["title"])
       @figure.titles<<@title
-      @title.save
     end
     if !params['landmark']["name"]==""
       @landmark=Landmark.find_or_create_by(params["landmark"])
       @figure.landmarks<<@landmark
-      @landmark.save
     end
     @figure.save
     binding.pry
