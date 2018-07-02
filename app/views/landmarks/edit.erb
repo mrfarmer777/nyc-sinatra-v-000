@@ -9,7 +9,7 @@
   <br />
   <label for="landmark[figure_id]">Figure Recognized: </label>
   <%Figure.all.each do |figure|%>
-    <input type="checkbox" name="landmark[figure_id]"" <%='checked' if @landmark.figure==figure%>><%=figure.name%></input>
+    <input type="checkbox" name="landmark[figure_id]" <%='checked' if @landmark.figure==figure%>><%=figure.name%></input>
   <%end%>
   <br />
   <input type="submit" value="Edit Landmark" id="Edit Landmark" />
