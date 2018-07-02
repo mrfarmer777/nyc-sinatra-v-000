@@ -1,7 +1,10 @@
 <form method="POST" action="/figures">
   <input type="text" name="figure[name]" id="figure_name" />
   <%Title.all.each do |title|%>
-    <input type="checkbox" name="title[id]" id="title_id" value="<%=title.id%>"><%=Title.name%></input>
+    <input type="checkbox" name="figure[title_ids][]" id="title_id" value="<%=title.id%>"><%=title.name%></input>
+  <%end%>
+  <%Landmark.all.each do |lm|%>
+    <input type="checkbox" name="figure[landmark_ids]" id="landmark_id" value="<%=lm.id%>"><%=lm.name%></input>
   <%end%>
   <input type="submit" value="Create Figure" id="Create Figure" />
 </form>
