@@ -14,6 +14,7 @@ class FiguresController < ApplicationController
 
     @figure=Figure.create(params[:figure])
     if !params["title"]["name"]==nil
+      binding.pry
       @title=Title.find_or_create_by(params["title"])
       @figure.titles<<@title
       @title.save
