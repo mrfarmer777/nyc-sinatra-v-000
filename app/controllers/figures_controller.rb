@@ -10,7 +10,7 @@ class FiguresController < ApplicationController
 
   post '/figures' do
     #?Why's it gotta be a hash here? vvv
-    @figure=figure.create(name:params["figure"]["name"])
+    @figure=Figure.create(name:params["figure"]["name"])
     @figure.save
     redirect "/figures/#{@figure.id}"
   end
