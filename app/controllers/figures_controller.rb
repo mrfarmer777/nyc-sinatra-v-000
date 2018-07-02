@@ -9,16 +9,7 @@ class FiguresController < ApplicationController
     erb :'figures/new'
   end
 
-  post '/figures' do
-    @titles=params["figure"]["title_ids"].collect{|id|Title.find(id)}
-    @landmarks=params["figure"]["landmark_ids"].collect{|id|Landmark.find(id)}
-    #?Why's it gotta be a hash here? vvv
-    @figure=Figure.create(name:params["figure"]["name"])
-    binding.pry
-    @figure.landmarks=@landmarks
-    @figure.titles=@titles
-    @figure.save
-    redirect "/figures/#{@figure.id}"
+  post '/figures' do    
   end
 
   get '/figures/:id' do
