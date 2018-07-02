@@ -15,6 +15,7 @@ class FiguresController < ApplicationController
     end
     if !params['landmark']["name"]==nil
       @landmark=Landmark.create(name:params["landmark"]["name"])
+    end
     @figure=Figure.create(params[:figure])
     @figure.save
 
