@@ -1,7 +1,7 @@
 <form method="POST" action="/figures">
   <input type="text" name="figure[name]" id="figure_name" />
   <%Title.all.each do |title|%>
-    <input type="checkbox" name="title[id]" id="title_id" value="<%=title.id%>"></input>
+    <input type="checkbox" name="title[id]" id="title_id" value="<%=title.id%>"><%=Title.name%></input>
   <%end%>
   <input type="submit" value="Create Figure" id="Create Figure" />
 </form>
