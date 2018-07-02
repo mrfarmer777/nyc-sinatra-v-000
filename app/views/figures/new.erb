@@ -9,7 +9,7 @@
   <%end%>
   <h5>Create a New Title:</h5>
   <input type="text" name="title[name]" id="title_name" />
-  
+
 
   <br />
   <label for="figure[name]">Landmarks:</label>
@@ -17,6 +17,7 @@
     <input type="checkbox" name="figure[landmark_ids][]" id="landmark_id" value="<%=lm.id%>"><%=lm.name%></input>
   <%end%>
   <br />
+  <h5>Create New Landmark: </h5>
   <input type="text" name="landmark[name]" id="landmark_name" />
   <input type="text" name="landmark[year_completed]" id="landmark_year_completed" />
   <input type="submit" value="Create Figure" id="Create Figure" />
