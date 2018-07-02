@@ -10,7 +10,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    
+
     @figure=Figure.create(params[:figure])
     if !params["title"]["name"]==nil
       @title=Title.find_or_create_by(params["title"])
