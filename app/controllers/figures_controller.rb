@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
     @titles=params["figure"]["title_ids"].collect{|id|Title.find(id)}
     @landmarks=params["figure"]["landmark_ids"].collect{|id|Landmark.find(id)}
     #?Why's it gotta be a hash here? vvv
-    @figure=Figure.create(name:params["figure"]["name"])
+    @figure=Figure.create(name:params["figure"]["name"],)
     @figure.landmarks=@landmarks
     @figure.titles=@titles
     @figure.save
