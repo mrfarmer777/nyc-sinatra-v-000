@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
     @titles=params["figure"]["titles"].collect{|id|Title.find(id)}
     @landmarks=params["figure"]["landmarks"].collect{|id|Landmark.find(id)}
     #?Why's it gotta be a hash here? vvv
-    @figure=Figure.create(name:params["figure"]["name"])
+    @figure=Figure.create(name:params["figure"]["name"],titles:@titles, landmarks:@landmarks)
     @figure.save
     redirect "/figures/#{@figure.id}"
   end
