@@ -6,6 +6,7 @@
   <br />
   <label for="landmark[name]">Year Completed: </label>
   <input type="number" name="landmark[year_completed]" id="landmark_year_completed" />
+  <label for="landmark[figure_id]">Figure Recognized: </label>
   <%Figure.all.each do |figure|%>
     <input type="checkbox" name=landmark[figure_id] <%='checked' if @landmark.figure_id==figure.id%>><%=figure.name%></input>
   <%end%>
