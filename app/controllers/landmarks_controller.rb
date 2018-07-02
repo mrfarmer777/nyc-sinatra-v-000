@@ -10,6 +10,7 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks' do
+    #?Why's it gotta be a hash here? vvv
     @landmark=Landmark.create(name:params["landmark"]["name"],year_completed:params["landmark"]["year_completed"])
     @landmark.save
     redirect "/landmarks/#{@landmark.id}"
