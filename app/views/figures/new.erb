@@ -1,4 +1,6 @@
 <form method="POST" action="/figures">
+  <br />
+  <label for="figure[name]">Figure Name:</label>
   <input type="text" name="figure[name]" id="figure_name" />
   <%Title.all.each do |title|%>
     <input type="checkbox" name="figure[title_ids][]" id="title_id" value="<%=title.id%>"><%=title.name%></input>
