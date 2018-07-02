@@ -11,13 +11,13 @@
 
 
   <br />
-  <label for="figure[name]">Landmarks:</label>
+  <label for="figure[name]">New Landmark Name:</label>
   <%Landmark.all.each do |lm|%>
     <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=lm.id%>" value="<%=lm.id%>"><%=lm.name%></input>
   <%end%>
   <br />
   <h5>Create New Landmark: </h5>
-  <label for="landmark[name]">Landmarks:</label>
+  <label for="landmark[name]">Year Completed:</label>
   <input type="text" name="landmark[name]" id="new_landmark" />
   <label for="landmark[year_completed]">Landmarks:</label>
   <input type="text" name="landmark[year_completed]" id="landmark_year_completed" />
