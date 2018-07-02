@@ -9,6 +9,8 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+    @titles=params["figure"]["titles"].collect{|id|Title.find(id)}
+    @landmarks=params["figure"]["landmarks"].collect{|id|Landmark.find(id)}
     #?Why's it gotta be a hash here? vvv
     @figure=Figure.create(name:params["figure"]["name"])
     @figure.save
