@@ -11,6 +11,8 @@ class FiguresController < ApplicationController
 
   post '/figures' do
     @figure=Figure.create(params[:figure])
+    params["figure"]["landmark_ids"].each {|id| Landmark.find(id).figure_id=@figure.id}
+    params["figure"]["title_ids"].each {|id| FigureTitle.create(title_id:id, figure_id:@figure.id)}
     binding.pry
   end
 
