@@ -10,11 +10,11 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+    if !params["title"]["name"]==nil
+      @title=Title.create(name:params["title"]["name"])
     @figure=Figure.create(params[:figure])
     @figure.save
-    #params["figure"]["landmark_ids"].each {|id| Landmark.find(id).figure_id=@figure.id}
-    #params["figure"]["title_ids"].each {|id| FigureTitle.create(title_id:id, figure_id:@figure.id)}
-    #binding.pry
+  
   end
 
   get '/figures/:id' do
