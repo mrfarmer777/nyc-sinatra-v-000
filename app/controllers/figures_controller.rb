@@ -10,8 +10,6 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    
-
     @figure=Figure.create(params[:figure])
     @figure.save
     #params["figure"]["landmark_ids"].each {|id| Landmark.find(id).figure_id=@figure.id}
