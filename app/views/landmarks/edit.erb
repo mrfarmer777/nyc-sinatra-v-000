@@ -2,7 +2,7 @@
   <input type="hidden" id="hidden" name="_method" value="PATCH" />
   <input type="text" name="landmark[name]" id="landmark_name" />
   <input type="number" name="landmark[year_completed]" id="landmark_year_completed" />
-  <%Figures.all.each do |figure|%>
+  <%Figure.all.each do |figure|%>
     <input type="checkbox" name=landmark[figure_id] <%='checked' if @landmark.figure_id==figure.id%><%=figure.name%>></input>
     <%end%>
   <input type="submit" value="Edit Landmark" id="Edit Landmark" />
