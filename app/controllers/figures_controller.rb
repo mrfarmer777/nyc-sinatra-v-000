@@ -24,7 +24,7 @@ class FiguresController < ApplicationController
       @landmark.save
     end
     @figure.save
-    @binding.pry
+    binding.pry
 
   end
 
