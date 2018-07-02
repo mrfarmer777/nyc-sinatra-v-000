@@ -10,13 +10,15 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+    @figure=Figure.create(params[:figure])
     if !params["title"]["name"]==nil
       @title=Title.create(name:params["title"]["name"])
+      @figure.titles<<@title
     end
     if !params['landmark']["name"]==nil
       @landmark=Landmark.create(name:params["landmark"]["name"])
     end
-    @figure=Figure.create(params[:figure])
+    
     @figure.save
 
   end
