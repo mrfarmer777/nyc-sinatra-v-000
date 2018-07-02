@@ -1,0 +1,8 @@
+<h2>Landmarks</h2>
+<ul>
+  <%@landmarks.each do |lm|%>
+    <li>
+      <a href="/landmarks/<%=lm.id%>"><%=lm.name%></a>
+    </li>
+  <%end%>
+</ul>
