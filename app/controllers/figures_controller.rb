@@ -14,10 +14,12 @@ class FiguresController < ApplicationController
     if !params["title"]["name"]==nil
       @title=Title.find_or_create_by(name:params["title"]["name"])
       @figure.titles<<@title
+      @title.save
     end
     if !params['landmark']["name"]==nil
       @landmark=Landmark.find_or_create_by(name:params["landmark"]["name"])
       @figure.landmarks<<@landmark
+      @landmark.save
     end
     @figure.save
 
