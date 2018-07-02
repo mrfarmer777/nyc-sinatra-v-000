@@ -9,6 +9,6 @@
   <%Figure.all.each do |figure|%>
     <input type="checkbox" name=landmark[figure_id] <%='checked' if @landmark.figure_id==figure.id%>><%=figure.name%></input>
   <%end%>
-  <br />  
+  <br />
   <input type="submit" value="Edit Landmark" id="Edit Landmark" />
 </form>
