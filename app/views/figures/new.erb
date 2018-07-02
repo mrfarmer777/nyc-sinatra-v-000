@@ -13,5 +13,6 @@
   <%Landmark.all.each do |lm|%>
     <input type="checkbox" name="figure[landmark_ids][]" id="landmark_id" value="<%=lm.id%>"><%=lm.name%></input>
   <%end%>
+  <br />
   <input type="submit" value="Create Figure" id="Create Figure" />
 </form>
